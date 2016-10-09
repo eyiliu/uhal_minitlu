@@ -26,7 +26,7 @@ LIBRARY_PATH = 	-L${EXTERN_BOOST_LIB_PREFIX} \
 
 LIBRARIES = 	-lpthread \
 		\
-		-lcactus_extern_pugixml \
+		-lpugixml \
 		\
 		-lboost_thread \
 		-lboost_system \

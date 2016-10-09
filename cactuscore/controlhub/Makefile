@@ -52,7 +52,7 @@ else
 ifeq ($(shell test -d ${EXTERN_ERLANG_BIN_PREFIX} && echo OK),OK)
 ERL=$(EXTERN_ERLANG_BIN_PREFIX)/erl
 ERLC=$(EXTERN_ERLANG_BIN_PREFIX)/erlc
-ESCRIPT=$(shell pwd)/erlang/bin/escript
+ESCRIPT=$(EXTERN_ERLANG_BIN_PREFIX)/escript
 else
 ERL=$(CACTUS_ROOT)/bin/erl
 ERLC=$(CACTUS_ROOT)/bin/erlc
@@ -69,9 +69,9 @@ all: _all
 build: _all
 buildall: _all
 
-_all: _erlang
-	${ESCRIPT} ./rebar get-deps compile
-	cd rel && ${ESCRIPT} ../rebar generate
+_all:
+	./rebar get-deps compile
+	cd rel && ../rebar generate
 
 
 rpm: _rpmall

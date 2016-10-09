@@ -40,7 +40,7 @@ BINDING_LIBRARIES = 	\
 			-lboost_system \
 			-lboost_thread \
 			\
-			-lcactus_extern_pugixml \
+			-lpugixml \
 			-lcactus_uhal_grammars \
 			-lcactus_uhal_log \
 			-lcactus_uhal_uhal

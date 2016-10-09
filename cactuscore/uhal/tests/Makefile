@@ -40,7 +40,7 @@ LIBRARIES = 	\
 		-lboost_thread \
 		-lboost_program_options \
 		\
-		-lcactus_extern_pugixml \
+		-lpugixml \
 		-lcactus_uhal_log \
 		-lcactus_uhal_grammars \
 		-lcactus_uhal_uhal	
