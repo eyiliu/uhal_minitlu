@@ -1,0 +1,6 @@
+[wbm]
+name=WBM repository
+baseurl=http://cmsinstallationserver/repo/repository/yumsnapshots/subsystems/wbm/cms_wbm_slc6_64_20140227_151617
+enabled=1
+priority=100
+gpgcheck=0

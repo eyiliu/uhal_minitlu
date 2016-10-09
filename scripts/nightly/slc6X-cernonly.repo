@@ -1,0 +1,6 @@
+[slc6X-cernonly]
+name=slc6 cernonly repository
+baseurl=http://cmsinstallationserver/repo/repository/yumsnapshots/slc6X/20130617/x86_64/cernonly
+enabled=1
+priority=5
+gpgcheck=0
