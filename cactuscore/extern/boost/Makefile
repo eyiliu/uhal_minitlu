@@ -10,13 +10,13 @@ PackageName = cactuscore-extern-boost
 Packager = Andrew Rose, Marc Magrans de Abril
 
 PACKAGE_VER_MAJOR = 1
-PACKAGE_VER_MINOR = 53
+PACKAGE_VER_MINOR = 57
 PACKAGE_VER_PATCH = 0
 PACKAGE_RELEASE = 0
 
 TARBALL_NAME = boost_${PACKAGE_VER_MAJOR}_${PACKAGE_VER_MINOR}_${PACKAGE_VER_PATCH}
 TARBALL_FILE = ${TARBALL_NAME}.tar.bz2
-
+TARBALL_URL = https://freefr.dl.sourceforge.net/project/boost/boost/${PACKAGE_VER_MAJOR}.${PACKAGE_VER_MINOR}.${PACKAGE_VER_PATCH}/${TARBALL_FILE}
 RPMBUILD_DIR = ${PackagePath}/RPMBUILD
 
 .PHONY: all _all clean _cleanall build _buildall install _installall rpm _rpmall test _testall
@@ -32,6 +32,11 @@ all: _all
 build: _all
 buildall: _all
 _all:
+	if [ ! -f ${TARBALL_FILE}]; then                                                     \
+		echo "Downloading: ${TARBALL_FILE} from ${TARBALL_URL}";		 \
+		wget ${TARBALL_URL};							\
+	fi;
+
 	if [ ! -f ${TARBALL_NAME}/.build_done ]; then                                                     \
 		mkdir -p ${RPMBUILD_DIR}/{RPMS/{i386,i586,i686,x86_64},SPECS,BUILD,SOURCES,SRPMS}; \
 		echo "Extracting: ${TARBALL_FILE}";												 \

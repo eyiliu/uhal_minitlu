@@ -1,8 +1,10 @@
 ifeq ($(Set), uhal_client)
 PACKAGES = \
+	cactuscore/extern/boost \
         cactuscore/uhal
 else ifeq ($(Set), uhal)
 PACKAGES = \
+	cactuscore/extern/boost \
         cactuscore/uhal \
         cactuscore/controlhub
 else ifeq ($(Set), ts)

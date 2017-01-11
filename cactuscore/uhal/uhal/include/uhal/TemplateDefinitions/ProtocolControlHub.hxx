@@ -182,7 +182,12 @@ namespace uhal
         return lExc;
       }
 
-      return false;
+      uhal::exception::ControlHubUnknownErrorCode* lExc = new uhal::exception::ControlHubUnknownErrorCode();
+      log ( *lExc , "Control Hub returned an unknown error code " , Integer ( lErrorCode, IntFmt< hex , fixed >() ),
+	    " for target with URI " , this->uri() , ". Please report this at https://svnweb.cern.ch/trac/cactus/newticket" );
+      return lExc;
+
+      // return false;
     }
 
     //aReplyStartIt++;
